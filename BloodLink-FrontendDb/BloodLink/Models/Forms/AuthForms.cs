@@ -17,6 +17,15 @@ namespace BloodLink.Models.Forms
         public string? InstitutionCity { get; set; }
     }
 
+    // Data sent by "Continue with Google" (google-auth.js).
+    //   Credential = the token Google gives the browser after the user picks an account.
+    //   On the Register page the role fields (Role, RequestCity, ...) are sent too.
+    //   It inherits RegisterForm, so it has the same role fields.
+    public class GoogleForm : RegisterForm
+    {
+        public string Credential { get; set; } = "";
+    }
+
     // Data sent by the Login page (login.js).
     public class LoginForm
     {
